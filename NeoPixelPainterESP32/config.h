@@ -1,6 +1,7 @@
 // NeoPixel Painter for ESP32 -- user configuration.
 // Everything you are likely to want to change lives in this file.
 #pragma once
+#include <sdkconfig.h> // defines CONFIG_IDF_TARGET_* used for the pin defaults below
 
 // ---------------------------------------------------------------------------
 // LED STRIP

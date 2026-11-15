@@ -93,7 +93,7 @@ static void progressBar(float f) {
   fillRange((int)(f * N_LEDS + 0.5f), strip.Color(0, 6, 0));
 }
 
-[[noreturn]] static void fatal(const String &msg) {
+static void fatal(const String &msg) {
   for (;;) {
     Serial.println("ERROR: " + msg);
     for (int i = 0; i < 4; i++) {
