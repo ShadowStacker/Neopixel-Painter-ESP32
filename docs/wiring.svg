@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="860" height="520" rx="12" fill="#ffffff"/>
+  <defs>
+    <style>
+      .box{fill:#f6f8fa;stroke:#57606a;stroke-width:1.5}
+      .title{font-weight:bold;font-size:14px;fill:#1f2328}
+      .pin{fill:#57606a;font-size:12px}
+      .w5{stroke:#d1242f;stroke-width:2.5;fill:none}
+      .wg{stroke:#1f2328;stroke-width:2.5;fill:none}
+      .wd{stroke:#1a7f37;stroke-width:2.5;fill:none}
+      .ws{stroke:#0969da;stroke-width:2;fill:none}
+      .wc{stroke:#8250df;stroke-width:2;fill:none}
+      .wa{stroke:#bc4c00;stroke-width:2;fill:none}
+      .lbl{font-size:12px;fill:#1f2328}
+    </style>
+  </defs>
+
+  <!-- Power -->
+  <rect class="box" x="30" y="30" width="170" height="70" rx="8"/>
+  <text class="title" x="45" y="55">5 V supply</text>
+  <text class="pin" x="45" y="75">UBEC + 8×AA NiMH</text>
+  <text class="pin" x="45" y="90">or USB power bank</text>
+
+  <!-- ESP32 -->
+  <rect class="box" x="300" y="170" width="200" height="250" rx="8"/>
+  <text class="title" x="355" y="195">ESP32 board</text>
+  <text class="pin" x="310" y="225">5V / VIN</text>
+  <text class="pin" x="310" y="255">GND</text>
+  <text class="pin" x="310" y="300">TRIGGER</text>
+  <text class="pin" x="310" y="330">NEXT (BOOT)</text>
+  <text class="pin" x="310" y="370">SPEED pot</text>
+  <text class="pin" x="310" y="400">BRIGHT pot</text>
+  <text class="pin" x="440" y="225">LED</text>
+  <text class="pin" x="440" y="300">SCK</text>
+  <text class="pin" x="440" y="320">MISO</text>
+  <text class="pin" x="440" y="340">MOSI</text>
+  <text class="pin" x="456" y="360">CS</text>
+
+  <!-- Level shifter -->
+  <rect class="box" x="560" y="170" width="140" height="80" rx="8"/>
+  <text class="title" x="575" y="195">74AHCT125</text>
+  <text class="pin" x="575" y="215">1A ← LED   1Y →</text>
+  <text class="pin" x="575" y="235">1OE → GND, VCC 5V</text>
+
+  <!-- Strip -->
+  <rect class="box" x="560" y="30" width="270" height="70" rx="8"/>
+  <text class="title" x="575" y="55">NeoPixel strip (144 px)</text>
+  <text class="pin" x="575" y="75">+5V   DIN   GND</text>
+  <text class="pin" x="575" y="90">1000 µF across +5V / GND</text>
+
+  <!-- SD -->
+  <rect class="box" x="600" y="290" width="230" height="90" rx="8"/>
+  <text class="title" x="615" y="315">microSD breakout (SPI)</text>
+  <text class="pin" x="615" y="337">SCK  MISO  MOSI  CS</text>
+  <text class="pin" x="615" y="357">3V3  GND   FAT32 card</text>
+
+  <!-- Controls -->
+  <rect class="box" x="30" y="270" width="170" height="80" rx="8"/>
+  <text class="title" x="45" y="295">Buttons</text>
+  <text class="pin" x="45" y="315">pin ── button ── GND</text>
+  <text class="pin" x="45" y="335">(internal pull-ups)</text>
+  <rect class="box" x="30" y="370" width="170" height="80" rx="8"/>
+  <text class="title" x="45" y="395">10 kΩ pots</text>
+  <text class="pin" x="45" y="415">3V3 ── wiper ── GND</text>
+  <text class="pin" x="45" y="435">wiper → ADC1 pin</text>
+
+  <!-- Wires: 5V -->
+  <path class="w5" d="M200 50 H560"/>
+  <path class="w5" d="M260 50 V220 H300"/>
+  <path class="w5" d="M530 50 V160 H630 V170"/>
+  <!-- GND -->
+  <path class="wg" d="M200 80 H240 V250 H300"/>
+  <path class="wg" d="M240 80 V120 H820 V100"/>
+  <!-- Data -->
+  <path class="wd" d="M500 220 H560"/>
+  <path class="wd" d="M700 210 H730 V100"/>
+  <text class="lbl" x="738" y="150">470 Ω</text>
+  <!-- SPI -->
+  <path class="ws" d="M500 296 H600"/>
+  <path class="ws" d="M500 316 H600"/>
+  <path class="ws" d="M500 336 H600"/>
+  <path class="ws" d="M500 356 H600"/>
+  <!-- Buttons -->
+  <path class="wc" d="M200 296 H300"/>
+  <path class="wc" d="M200 326 H300"/>
+  <!-- Pots -->
+  <path class="wa" d="M200 396 H250 V366 H300"/>
+  <path class="wa" d="M200 426 H260 V396 H300"/>
+
+  <!-- Legend -->
+  <g transform="translate(30,480)" font-size="12">
+    <line x1="0" y1="0" x2="24" y2="0" class="w5"/><text x="30" y="4">5 V</text>
+    <line x1="80" y1="0" x2="104" y2="0" class="wg"/><text x="110" y="4">GND (common!)</text>
+    <line x1="220" y1="0" x2="244" y2="0" class="wd"/><text x="250" y="4">LED data</text>
+    <line x1="330" y1="0" x2="354" y2="0" class="ws"/><text x="360" y="4">SPI (SD)</text>
+    <line x1="440" y1="0" x2="464" y2="0" class="wc"/><text x="470" y="4">buttons</text>
+    <line x1="540" y1="0" x2="564" y2="0" class="wa"/><text x="570" y="4">pots</text>
+    <text x="630" y="4" fill="#57606a">Pin numbers: see table</text>
+  </g>
+</svg>
